@@ -3,11 +3,11 @@ const btn = document.querySelector('button');
 
 function logText(e){
     console.log(this.classList.value);
-    e.stopPropagation(); //stop bubbling!
+    // e.stopPropagation(); //stop bubbling!
 }
 
 divs.forEach(div => div.addEventListener('click', logText, {
-    capture: false, //true makes it go from the bottom level down (starts from body)
+    capture: true, //true makes it go from the bottom level down (starts from body)
 }));
 
 btn.addEventListener('click', () => {
